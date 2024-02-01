@@ -9,6 +9,7 @@ const typedfield = document.getElementById('typed');
 const wrap = document.getElementById('wrap');
 const start = document.getElementById('start');
 const count = document.getElementById('count');
+const typedCount = document.getElementById('typedCount');
 
 
 // 複数のテキストを格納する配列
@@ -56,15 +57,11 @@ const keypress = e => {
     }
 
 
-
-
-
-
-
-
     // 正タイプの場合
     // スコアのインクリメント
     score++;
+    typedCount.textContent = score;
+
     wrap.classList.remove('mistyped');
     typed += untyped.substring(0,1);
     untyped = untyped.substring(1);
